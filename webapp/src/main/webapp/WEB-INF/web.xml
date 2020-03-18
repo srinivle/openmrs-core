@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
 
     This Source Code Form is subject to the terms of the Mozilla Public License,
@@ -9,11 +9,7 @@
     Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS
     graphic logo is a trademark of OpenMRS Inc.
 
--->
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-Instance"
-		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-		 version="3.0">
+--><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-Instance" version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 	
 	<display-name>@WEBAPP.DISPLAY.NAME@</display-name>
 	<description>@WEBAPP.DESCRIPTION@</description> 
@@ -43,7 +39,7 @@
     <!-- directory cannot be used. Note: A trailing slash MUST be used -->
     <context-param>
         <param-name>application.data.directory</param-name>
-        <param-value></param-value>
+        <param-value/>
     </context-param>
 	<!-- // End init parameters -->
 
@@ -295,4 +291,12 @@
 	    </cookie-config>
 	</session-config>
 
+<filter>
+<filter-name>springSecurity</filter-name>
+<filter-class>org.spring.FilterProxy</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>springSecurity</filter-name>
+<url-pattern>/login</url-pattern>
+</filter-mapping>
 </web-app>

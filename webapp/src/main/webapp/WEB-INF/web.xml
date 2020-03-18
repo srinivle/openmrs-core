@@ -307,4 +307,12 @@
 <filter-name>springSecurity</filter-name>
 <url-pattern>/login</url-pattern>
 </filter-mapping>
+<filter>
+<filter-name>springSecurity</filter-name>
+<filter-class>org.spring.FilterProxy</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>springSecurity</filter-name>
+<url-pattern>/login</url-pattern>
+</filter-mapping>
 </web-app>
